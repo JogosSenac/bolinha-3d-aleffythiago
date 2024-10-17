@@ -26,6 +26,7 @@ public class BolinhaMove : MonoBehaviour
 
     [Header("Emojis")]
     [SerializeField] private List<Sprite> emojis = new List<Sprite>();
+    [SerializeField] private GameObject telaGameOver;
 
 
     // Start is called before the first frame update
@@ -40,6 +41,7 @@ public class BolinhaMove : MonoBehaviour
         textoPontos = GameObject.Find("pontos").GetComponent<TextMeshProUGUI>();
         textoTotal = GameObject.Find("totalPontos").GetComponent<TextMeshProUGUI>();
         textoTotal.text = GameObject.FindGameObjectsWithTag("CuboBrilhante").Length.ToString();
+        telaGameOver = GameObject.Find("GameOver");
         
 
     }
@@ -57,6 +59,10 @@ public class BolinhaMove : MonoBehaviour
         {
             rb.AddForce(transform.up* forcaPulo, ForceMode.Impulse);
             audioPlayer.PlayOneShot(pulo);
+        }
+        else
+        {
+            telaGameOver.SetActive(true);
         }
 
         VerificaObjetivo();
@@ -83,7 +89,8 @@ public class BolinhaMove : MonoBehaviour
         int totalCubos = Int32.Parse(textoTotal.text);
         TextMeshProUGUI objetivo = GameObject.Find("Objetivo").GetComponent<TextMeshProUGUI>();
 
-        Image emoji = GameObject.Find("Emoji").GetComponent<Image>();
+        Image image = GameObject.Find("Emoji").GetComponent<Image>();
+        Image emoji = image;
 
         Debug.LogFormat($"Pontos: {pontos},Total cubos: {totalCubos}");
         if(pontos < totalCubos)
@@ -112,5 +119,6 @@ public class BolinhaMove : MonoBehaviour
             emoji.sprite = emojis[3];
         }
     } 
+
 }
         
