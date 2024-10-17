@@ -1,27 +1,12 @@
 fileFormatVersion: 2
 guid: dffef66376be4fa480fb02b19edbe903
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: EmojiOne_0
-    21300002: EmojiOne_1
-    21300004: EmojiOne_2
-    21300006: EmojiOne_3
-    21300008: EmojiOne_4
-    21300010: EmojiOne_6
-    21300012: EmojiOne_7
-    21300014: EmojiOne_8
-    21300016: EmojiOne_9
-    21300018: EmojiOne_10
-    21300020: EmojiOne_11
-    21300022: EmojiOne_12
-    21300024: EmojiOne_13
-    21300026: EmojiOne_5
-    21300028: EmojiOne_14
+  internalIDToNameTable: []
   externalObjects: {}
-  serializedVersion: 5
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
@@ -35,21 +20,26 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
+    flipGreenChannel: 0
   isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
   seamlessCubemap: 0
-  textureFormat: -1
+  textureFormat: 1
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
-    aniso: -1
-    mipBias: -1
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
-    wrapW: 1
+    wrapW: 0
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -58,21 +48,28 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
-  textureType: 0
+  textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
   platformSettings:
-  - serializedVersion: 2
+  - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 512
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -80,10 +77,25 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
-  - serializedVersion: 2
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
     buildTarget: Standalone
-    maxTextureSize: 512
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -91,10 +103,12 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
-  - serializedVersion: 2
-    buildTarget: iPhone
-    maxTextureSize: 512
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -102,18 +116,9 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
-  - serializedVersion: 2
-    buildTarget: Android
-    maxTextureSize: 512
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -126,13 +131,14 @@ TextureImporter:
         width: 128
         height: 128
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4bcc36da2108f2c4ba3de5c921d25c3c
+      spriteID: adfb98b422b7d4a43a0a5c246702388c
+      internalID: 999798593
       vertices: []
       indices: 
       edges: []
@@ -146,13 +152,14 @@ TextureImporter:
         width: 128
         height: 128
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e9eea8093eaeaee4d901c4553f572c22
+      spriteID: 5cc97f40a7434d841bb2d359be8d88ab
+      internalID: -1717960227
       vertices: []
       indices: 
       edges: []
@@ -166,13 +173,14 @@ TextureImporter:
         width: 128
         height: 128
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 49451da35411dcc42a3692e39b0fde70
+      spriteID: 8c786a010fe85ac459dabcd740e644f4
+      internalID: -1111069939
       vertices: []
       indices: 
       edges: []
@@ -186,13 +194,14 @@ TextureImporter:
         width: 128
         height: 128
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f65709664b924904790c850a50ca82bc
+      spriteID: b27311328eee5db44a107af3cfe11af7
+      internalID: -1393323313
       vertices: []
       indices: 
       edges: []
@@ -206,13 +215,35 @@ TextureImporter:
         width: 128
         height: 128
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5b92c568a5ec9ad4b9ed90e271f1c9a8
+      spriteID: ba0db1541f15ca748b39613834a8a21f
+      internalID: -1326151003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EmojiOne_5
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 256
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9fef601a251765b43a4ab4a885df5aad
+      internalID: -1688715696
       vertices: []
       indices: 
       edges: []
@@ -226,13 +257,14 @@ TextureImporter:
         width: 128
         height: 128
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b10f2b48b7281594bb8a24a6511a35af
+      spriteID: 5db94b705a9926f4da513fddf308fb68
+      internalID: -112055670
       vertices: []
       indices: 
       edges: []
@@ -246,13 +278,14 @@ TextureImporter:
         width: 128
         height: 128
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 10a600f9329dc2246a897e89f4d283cd
+      spriteID: 5d594f9f9f351fa4cb2249230ee96964
+      internalID: 51763268
       vertices: []
       indices: 
       edges: []
@@ -266,13 +299,14 @@ TextureImporter:
         width: 128
         height: 128
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 66cffa363b90ab14787d8a5b90cf4502
+      spriteID: 78a7a2f5f316d8b47abdaef3677fe287
+      internalID: 602406113
       vertices: []
       indices: 
       edges: []
@@ -286,13 +320,14 @@ TextureImporter:
         width: 128
         height: 128
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 55cf3d409c9b89349b1e1bdc1cc224ad
+      spriteID: 1981f78b14c9fa84fa06ed3e79f9cff7
+      internalID: -243370128
       vertices: []
       indices: 
       edges: []
@@ -306,13 +341,14 @@ TextureImporter:
         width: 128
         height: 128
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2a9e58eaf96feef42bcefa1cf257193f
+      spriteID: 6988579a63391bb41a69239275de2f84
+      internalID: -1086065214
       vertices: []
       indices: 
       edges: []
@@ -326,13 +362,14 @@ TextureImporter:
         width: 128
         height: 128
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2489120affc155840ae6a7be2e93ce19
+      spriteID: 8f79cf252ebf3c448a602996cf3fba00
+      internalID: -735162834
       vertices: []
       indices: 
       edges: []
@@ -346,13 +383,14 @@ TextureImporter:
         width: 128
         height: 128
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 412349a150598d14da4d7140df5c0286
+      spriteID: 507c93ad1f843e94499276442cffa1f4
+      internalID: -1063133866
       vertices: []
       indices: 
       edges: []
@@ -366,19 +404,20 @@ TextureImporter:
         width: 128
         height: 128
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a937464b42bb3634782dea34c6becb6c
+      spriteID: 666b16da07b70a649b158fb15c04b5c5
+      internalID: -1652671178
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: EmojiOne_5
+      name: EmojiOne_14
       rect:
         serializedVersion: 2
         x: 256
@@ -392,17 +431,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b0f933b217682124dbfc5e6b89abe3d0
+      spriteID: 79807e419a0a1e24184a656e34b72111
+      internalID: -1196912740
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: EmojiOne_14
+      name: EmojiOne_15
       rect:
         serializedVersion: 2
-        x: 128
-        y: 256
+        x: 384
+        y: 0
         width: 128
         height: 128
       alignment: 0
@@ -412,7 +452,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f7235c763afe4434e8bb666750a41096
+      spriteID: 1a0ec98654218824c883dfc8e2a9fd48
+      internalID: -1696922278
       vertices: []
       indices: 
       edges: []
@@ -420,12 +461,32 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 3e32d8f5477abfc43b19066e8ad5032e
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
-  spritePackingTag: 
+    secondaryTextures: []
+    nameFileIdTable:
+      EmojiOne_0: 999798593
+      EmojiOne_1: -1717960227
+      EmojiOne_10: -1086065214
+      EmojiOne_11: -735162834
+      EmojiOne_12: -1063133866
+      EmojiOne_13: -1652671178
+      EmojiOne_14: -1196912740
+      EmojiOne_15: -1696922278
+      EmojiOne_2: -1111069939
+      EmojiOne_3: -1393323313
+      EmojiOne_4: -1326151003
+      EmojiOne_5: -1688715696
+      EmojiOne_6: -112055670
+      EmojiOne_7: 51763268
+      EmojiOne_8: 602406113
+      EmojiOne_9: -243370128
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 
