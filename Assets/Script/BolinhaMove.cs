@@ -45,6 +45,7 @@ public class BallMoviment : MonoBehaviour
     [SerializeField] private AudioClip pulo;
 
     [SerializeField] private AudioClip pegaCubo;
+    [SerializeField] private AudioClip Perdeu;
 
     private AudioSource audioPlayer;
 
@@ -61,7 +62,7 @@ public class BallMoviment : MonoBehaviour
     {
 
         rb = GetComponent<Rigidbody>();
-
+        estarVivo = true;
         audioPlayer = GetComponent<AudioSource>();
 
         posInicial = transform.position;
@@ -153,6 +154,7 @@ public class BallMoviment : MonoBehaviour
     {
 
         if (collision.gameObject.CompareTag("Lava"))
+            audioPlayer.PlayOneShot(Perdeu);
 
         {
 

@@ -17431,6 +17431,8 @@ MonoBehaviour:
   estaPulando: 0
   pulo: {fileID: 8300000, guid: b65174067f0228f4fa405e54606a005c, type: 3}
   pegaCubo: {fileID: 8300000, guid: 2d6169d341d81174d8c57bee63b28dc6, type: 3}
+  Perdeu: {fileID: 8300000, guid: 14fab3238a87ac54b849dbaaf0497c70, type: 3}
+  emojis: []
 --- !u!54 &1244879905
 Rigidbody:
   m_ObjectHideFlags: 0
