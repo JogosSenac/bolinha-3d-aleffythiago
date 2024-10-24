@@ -1,76 +1,66 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
-public class BolinhaMove : MonoBehaviour
+public class BallMoviment : MonoBehaviour
 {
     private float moveH;
     private float moveV;
     private Rigidbody rb;
+    private Vector3 posInicial;
+    public GameObject telaMorte;
+    public GameObject menu;
+    public Menu script;
     [SerializeField] private float velocidade;
     [SerializeField] private float forcaPulo;
-    [SerializeField] private bool invertH;
-     [SerializeField] private int pontos;
-     [SerializeField] private int invertV;
+    [SerializeField] private int pontos = 0;
+    [SerializeField] private bool estaVivo = true;
+    [SerializeField] private bool estaPulando;
+
     [Header("Sons da Bolinha")]
-     [SerializeField] private AudioClip pulo;
-     [SerializeField] private AudioClip pegaCubo; 
-     private AudioSource audioPlayer;
-     private bool estarVivo = true;
-     private TextMeshProUGUI textoPontos;
-     private TextMeshProUGUI textoTotal;
+    [SerializeField] private AudioClip pulo;
+    [SerializeField] private AudioClip pegaCubo;
+    private AudioSource audioPlayer;
+    private TextMeshProUGUI textoPontos;
+    private TextMeshProUGUI textoTotal;
 
-    
-    [SerializeField] private List<Sprite> emojis = new List<Sprite>();
-    [SerializeField] private GameObject telaGameOver;
+   
 
-    public object LoadeScane { get; private set; }
-
-
-    // Start is called before the first frame update
     void Start()
-    
     {
-
-
         rb = GetComponent<Rigidbody>();
         audioPlayer = GetComponent<AudioSource>();
-        
-        textoPontos = GameObject.Find("pontos").GetComponent<TextMeshProUGUI>();
-        textoTotal = GameObject.Find("totalPontos").GetComponent<TextMeshProUGUI>();
+        posInicial = transform.position;
+        script = menu.GetComponent<Menu>();
+        textoPontos = GameObject.FindGameObjectWithTag("Pontos").GetComponent<TextMeshProUGUI>();
+        textoTotal = GameObject.Find("TotalCubos").GetComponent<TextMeshProUGUI>();
         textoTotal.text = GameObject.FindGameObjectsWithTag("CuboBrilhante").Length.ToString();
-        telaGameOver = GameObject.Find("GameOver");
-        
-
     }
 
-    // Update is called once per frame
     void Update()
-
     {
-       
-        estarVivo = true;
-        moveH = Input.GetAxis("Horizontal");
-        moveV = Input.GetAxis("Vertical");
-        transform.position += new Vector3 (moveH * velocidade * Time.deltaTime, 0,  moveV * velocidade * Time.deltaTime);
-        
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (estaVivo)
         {
-            rb.AddForce(transform.up* forcaPulo, ForceMode.Impulse);
-            audioPlayer.PlayOneShot(pulo);
-        }
-        else
-        {
-            telaGameOver.SetActive(true);
-        }
+            moveH = Input.GetAxis("Horizontal");
+            moveV = Input.GetAxis("Vertical");
+            transform.position += new Vector3(moveH * velocidade * Time.deltaTime, 0, moveV * velocidade * Time.deltaTime);
 
-        VerificaObjetivo();
+
+            if (Input.GetKeyDown(KeyCode.Space) && !estaPulando)
+            {
+                rb.AddForce(transform.up * forcaPulo, ForceMode.Impulse);
+                audioPlayer.PlayOneShot(pulo);
+                estaPulando = true;
+            }
+
+            VerificaObjetivos();
+        }
     }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("CuboBrilhante"))
@@ -80,48 +70,64 @@ public class BolinhaMove : MonoBehaviour
             pontos++;
             textoPontos.text = pontos.ToString();
         }
+
+        if (other.gameObject.CompareTag("PassaFase") && pontos >= 42)
+        {
+            SceneManager.LoadScene("Fase2");
+            pontos = 0;
+        }
+
+        if (other.gameObject.CompareTag("PassaFase1") && pontos >= 12)
+        {
+            SceneManager.LoadScene("Win");
+            pontos = 0;
+        }
     }
+
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.CompareTag("Lava"))
+        if (collision.gameObject.CompareTag("Lava"))
         {
-            estarVivo = false;
+            estaVivo = false;
+            telaMorte.SetActive(true);
         }
+
+        
     }
+
     private void VerificaObjetivo()
     {
-        int totalCubos = Int32.Parse(textoTotal.text);
+        int totalCubos = Int32.Perse(textoTotal.text);
         TextMeshProUGUI objetivo = GameObject.Find("Objetivo").GetComponent<TextMeshProUGUI>();
 
-       
-        Debug.LogFormat($"Pontos: {pontos},Total cubos: {totalCubos}");
-        if(pontos < totalCubos)
+
+        Debug.LogFormat($"Pontos;{pontos},Total Cubos: {totalCubos}");
+         if(pontos < totalCubos)
         {
-           
+
             objetivo.text = "pegue todos os cubos";
-            
-        }
-         if(pontos >= totalCubos / 2)
-        {
-            
-            objetivo.text = "continue assim,você ja pegou a metade";
-            
-        }
-        if(pontos >= totalCubos -5)
-        {
-           
-            objetivo.text ="quase no fim";
-            
 
         }
-        if(pontos == totalCubos)
+        if (pontos >= totalCubos / 2)
         {
-            
-            objetivo.text = "todos os cubos coletados,passagem liberada";
-            
+
+             objetivo.text = "continue assim,você ja pegou a metade"
+
         }
-    } 
+        if (pontos >= totalCubos - 5)
+        {
+
+            objetivo.text = "quase no fim";
+
+
+        }
+        if (pontos == totalCubos)
+        {
+
+            objetivo.text = "todos os cubos coletados,passagem liberada";
+
+        }
+    }
 
 
 }
-        

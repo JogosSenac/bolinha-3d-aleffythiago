@@ -6,6 +6,7 @@ TagManager:
   tags:
   - CuboBrilhante
   - Lava
+  - PassaFase
   layers:
   - Default
   - TransparentFX
